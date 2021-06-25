@@ -1,16 +1,252 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src = "src/script.js"></script>
-    <link rel = "stylesheet" type = "text/css" href = "src/style.css"/>
+    <title>Title</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1 class = "head">Заголовок</h1>
-    <p class = "para">Параграф....</p>
+    <div class="header container justify-content-center">
+        <div class="void">
+
+        </div>
+
+        <div class="row">
+            <div class="sign col-sm">
+                <div class="imglogo">
+                    <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="search container-fluid col-sm">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control border-0 border-bottom border-dark" placeholder="Поиск..."
+                        aria-label="Поиск..." aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn searchbut" type="button" style="color: red;">Найти</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid col-sm">
+                <button type="button" class="butt btn btn-danger">Войти</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm text-end">
+                <button class="btn searchbut" type="button" id="movieButton" onclick="setMovie()">
+                    <h4>Фильмы</h4>
+                </button>
+            </div>
+            <div class="col-sm text-start">
+                <button class="btn searchbut" type="button" id="tvButton" onclick="setTv()">
+                    <h4>Телепередачи</h4>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="movie">
+        <div>
+            <h5>🔥 Новинки</h5>
+            <p></p>
+        </div>
+        <div class="row">
+            <div class="block col-3" id="blc">
+                <div class="first_block">
+                    <div class="round blurblock" id="id1" onmouseenter="setFade(this)" onmouseleave="delFade(this)">
+                        <a href="" id="blurid1"><img src="images/a.png" alt=""></a>
+                        <p class="info_img" id="textid1">Милейший котеночек!</p>
+                    </div>
+                </div>
+                <p>Мульт в кино. Выпуск №103. Некогда грустить!</p>
+            </div>
+            <div class="block col-3">
+                <div class="first_block">
+                    <div class="round blurblock" id="id2" onmouseenter="setFade(this)" onmouseleave="delFade(this)">
+                        <a href="" id="blurid2"><img src="images/b.png" alt=""></a>
+                        <p class="info_img" id="textid2">Мышь Мышь Мышь Мышь</p>
+                    </div>
+                </div>
+                <p>Новый Бэтмен</p>
+            </div>
+            <div class="block col-3">
+                <div class="first_block">
+                    <div class="round blurblock" id="id3" onmouseenter="setFade(this)" onmouseleave="delFade(this)">
+                        <a href="" id="blurid3"><img src="images/c.png" alt=""></a>
+                        <p class="info_img" id="textid3">Фильм повествует о череде событий, произошедших в Голливуде в
+                            1969 году,
+                            на закате его «золотого века».
+                            Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно
+                            меняющемся мире киноиндустрии.</p>
+                    </div>
+                </div>
+                <p>Однажды... в Голливуде</p>
+            </div>
+            <div class="block col-3">
+                <div class="first_block">
+                    <div class="round blurblock" id="id4" onmouseenter="setFade(this)" onmouseleave="delFade(this)">
+                        <a href="" id="blurid4"><img src="images/d.png" alt=""></a>
+                        <p class="info_img" id="textid4">ДАДАДАДАДАДАДАДАД</p>
+                    </div>
+                </div>
+                <p>Стриптизёрши</p>
+            </div>
+        </div>
+
+        <div>
+            <h5>Жанры</h5>
+            <p></p>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <a href="" class="genre genre1">
+                    <p class="smile">😁</p>
+                    <p class="genretext">Комедии</p>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="" class="genre genre2">
+                    <p class="smile">😭</p>
+                    <p class="genretext">Драмы</p>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="" class="genre genre3">
+                    <p class="smile">👽</p>
+                    <p class="genretext">Фантастика</p>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="" class="genre genre4">
+                    <p class="smile">👻</p>
+                    <p class="genretext">Ужасы</p>
+                </a>
+            </div>
+        </div>
+
+        <br><br>
+
+    </div>
+
+    <div class="container" id="tv">
+        <br>
+        <div class="row">
+            <div class="container-fluid tvblock">
+                <div class="row">
+                    <div class="col-4 logo">
+                        <div class="imagelogo">
+                            <img src="images/1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-8 progs">
+                        <p></p>
+                        <h5>Первый канал</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tvvoid"></div>
+            <div class="container-fluid tvblock">
+                <div class="row">
+                    <div class="col-4 logo">
+                        <div class="imagelogo">
+                            <img src="images/2x2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-8 progs">
+                        sad
+                    </div>
+                </div>
+            </div>
+            <div class="tvvoid"></div>
+            <div class="container-fluid tvblock">
+                <div class="row">
+                    <div class="col-4 logo">
+                        <div class="imagelogo">
+                            <img src="images/rbc.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-8 progs">
+                        sad
+                    </div>
+                </div>
+            </div>
+            <div class="tvvoid"></div>
+            <div class="container-fluid tvblock">
+                <div class="row">
+                    <div class="col-4 logo">
+                        <div class="imagelogo">
+                            <img src="images/amed.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-8 progs">
+                        sad
+                    </div>
+                </div>
+            </div>
+            <div class="tvvoid"></div>
+        </div>
+    </div>
+
+    <!-- Modal
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+      </button>
+      
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    <footer>
+        <div class="foot container-fluid">
+            <div class="container">
+                <div class="row form_info">
+                    <div class="img_foot col-1">
+                        <a href=""><img class="foot_imgs" src="images/Vector (1).png" alt=""></a>
+                    </div>
+                    <div class="col-11">
+                        <p class="address">
+                            426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)
+                        </p>
+                        <p class="phone">
+                            +7 (3412) 93-88-61, 43-29-29
+                        </p>
+                        <a class="link_ft" href="htc-cs.ru">
+                            <p class="link">
+                                htc-cs.ru
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>
