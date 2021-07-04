@@ -7,6 +7,63 @@ let movie = null;
 let tvButton = null;
 let movieButton = null;
 
+let inputLogin = null;
+let inputPass = null;
+
+let enter = null;
+let exit = null;
+let exitButton = null;
+let hello = null;
+
+function store() {
+  inputLogin = document.getElementById("inputLogin");
+  inputPass = document.getElementById("inputPass");
+
+  localStorage.setItem("login", inputLogin.value);
+  localStorage.setItem("pass", inputPass.value);
+}
+
+function login() {
+  inputLogin = document.getElementById("inputLogin");
+  inputPass = document.getElementById("inputPass");
+
+  let login = inputLogin.value;
+  let pass = inputPass.value;
+
+  let loginStored = localStorage.getItem("login");
+  let passStored = localStorage.getItem("pass");
+
+  if (login == loginStored && pass == passStored) {
+    loginChange(loginStored);
+  }
+  else {
+    alert("You must register first*");
+  }
+}
+
+function loginChange(userName) {
+  enter = document.getElementById("notLogged");
+  exit = document.getElementById("onlyLogged");
+  exitButton = document.getElementById("onlyLogged2");
+
+  hello = document.getElementById("helloWorld");
+  hello.value = userName;
+
+  enter.style.display = "none";
+  exit.style.display = "block";
+  exitButton.style.display = "block";
+}
+
+function exitLog() {
+  enter = document.getElementById("notLogged");
+  exit = document.getElementById("onlyLogged");
+  exitButton = document.getElementById("onlyLogged2");
+
+  enter.style.display = "block";
+  exit.style.display = "none";
+  exitButton.style.display = "none";
+}
+
 function changeButtonFocus(btn) {
   btn.style.color = "red";
   btn.style.borderBottom = "2px solid red";

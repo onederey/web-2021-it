@@ -8,14 +8,38 @@ img {
     border-radius: 3%;
 }
 
+#onlyLogged {
+    display: none;
+}
+
+#onlyLogged2 {
+    display: none;
+}
+
+#notLogged {
+    display: block;
+}
+
 .progs {
     text-align: left;
+}
+
+.nameoftv {
+    margin-top:10px;
+}
+
+.nameofprog {
+    margin-bottom:3px;
+}
+
+.current {
+    color:red;
 }
 
 .imagelogo {
     text-align: center;
     position: relative;
-    top: 100%;
+    top: 35%;
     height: 55px;
 }
 
@@ -100,7 +124,12 @@ img {
     float: right;
 }
 
-.form-control:focus {
+.buttnone {
+    width: 113px;
+    height: 38px;
+}
+
+.searchfocus:focus {
     color: #333333;
     font-weight: 700;
     font-size: 16px;
@@ -121,6 +150,13 @@ img {
     bottom: 24%;
     font-size: 16px;
     line-height: 19px;
+}
+
+.exitbut {
+    margin-top: 2px;
+    width: 113px;
+    height: 38px;
+    float: right;
 }
 
 .first_block {
