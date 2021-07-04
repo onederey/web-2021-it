@@ -10,6 +10,7 @@ img {
 
 #onlyLogged {
     display: none;
+    margin-right: -10px;
 }
 
 #onlyLogged2 {
@@ -156,7 +157,9 @@ img {
     margin-top: 2px;
     width: 113px;
     height: 38px;
-    float: right;
+    float: left;
+    margin-top: -6px;
+    margin-left: -15px;
 }
 
 .first_block {

@@ -47,7 +47,7 @@ function loginChange(userName) {
   exitButton = document.getElementById("onlyLogged2");
 
   hello = document.getElementById("helloWorld");
-  hello.value = userName;
+  hello.value = userName = ",";
 
   enter.style.display = "none";
   exit.style.display = "block";
