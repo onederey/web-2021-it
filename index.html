@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <div class="savevoid" id="savevoid1"></div>
     <div class="header container justify-content-center">
         <div class="void">
 
@@ -33,7 +34,8 @@
             </div>
             <div class="search container-fluid col-4">
                 <div class="input-group mb-3">
-                    <input type="text" class="searchfocus form-control border-0 border-bottom border-dark"
+                    <input type="text"
+                        class="searchfocus form-control border-0 border-bottom border-dark rounded-0 shadow-none"
                         placeholder="Поиск..." aria-label="Поиск..." aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <button class="btn searchbut" type="button" style="color: red;">
@@ -48,7 +50,7 @@
                     Войти
                 </button>
 
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                <div class="modal fade container-fluid" id="exampleModalCenter" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -60,13 +62,15 @@
                                     <form>
                                         <div class="mb-3">
                                             <label for="inputLogin" class="form-label">Логин</label>
-                                            <input type="text" class="form-control border-0 border-bottom border-dark"
+                                            <input type="text"
+                                                class="form-control border-0 border-bottom border-dark rounded-0"
                                                 id="inputLogin">
                                         </div>
                                         <div class="mb-3">
                                             <label for="inputPass" class="form-label">Пароль</label>
                                             <input type="password"
-                                                class="form-control border-0 border-bottom border-dark" id="inputPass">
+                                                class="form-control border-0 border-bottom border-dark rounded-0"
+                                                id="inputPass">
                                         </div>
                                         <div class="mb-3 form-check">
                                             <input type="checkbox" class="form-check-input" id="check">
@@ -108,12 +112,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm text-end">
-                <button class="btn searchbut" type="button" id="movieButton" onclick="setMovie()">
+                <button class="btn rounded-0 shadow-none" type="button" id="movieButton" onclick="setMovie()">
                     <h4>Фильмы</h4>
                 </button>
             </div>
             <div class="col-sm text-start">
-                <button class="btn searchbut" type="button" id="tvButton" onclick="setTv()">
+                <button class="btn rounded-0 shadow-none" type="button" id="tvButton" onclick="setTv()">
                     <h4>Телепередачи</h4>
                 </button>
             </div>

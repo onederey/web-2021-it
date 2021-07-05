@@ -15,12 +15,20 @@ let exit = null;
 let exitButton = null;
 let hello = null;
 
+let loginReg = null;
+let passReg = null;
+
+let reg = false;
+
 function store() {
   inputLogin = document.getElementById("inputLogin");
   inputPass = document.getElementById("inputPass");
 
   localStorage.setItem("login", inputLogin.value);
   localStorage.setItem("pass", inputPass.value);
+
+  loginReg = localStorage.getItem("login")
+  passReg = localStorage.getItem("pass")
 }
 
 function login() {
@@ -30,11 +38,11 @@ function login() {
   let login = inputLogin.value;
   let pass = inputPass.value;
 
-  let loginStored = localStorage.getItem("login");
-  let passStored = localStorage.getItem("pass");
+  loginReg = localStorage.getItem("login")
+  passReg = localStorage.getItem("pass")
 
-  if (login == loginStored && pass == passStored) {
-    loginChange(loginStored);
+  if (login == loginReg && pass == passReg) {
+    loginChange(loginReg);
   }
   else {
     alert("You must register first*");
@@ -46,8 +54,7 @@ function loginChange(userName) {
   exit = document.getElementById("onlyLogged");
   exitButton = document.getElementById("onlyLogged2");
 
-  hello = document.getElementById("helloWorld");
-  hello.value = userName = ",";
+  hello = document.getElementById("helloWorld").textContent += (userName + ",");
 
   enter.style.display = "none";
   exit.style.display = "block";
@@ -62,6 +69,8 @@ function exitLog() {
   enter.style.display = "block";
   exit.style.display = "none";
   exitButton.style.display = "none";
+
+  localStorage.clear();
 }
 
 function changeButtonFocus(btn) {
@@ -106,38 +115,55 @@ function setFade(x) {
 
   if (x.id == "id1") {
     a = document.getElementById("blurid1");
-    a.style.filter = "blur(2px)";
+    a.style.opacity = "0.5";
 
     b = document.getElementById("textid1");
-    b.style.display = "block"
+    b.style.display = "block";
+    b.style.background = "rgba(0, 0, 0, 0.6)";
+    b.style.cursor = "pointer";
   }
 
   if (x.id == "id2") {
     a = document.getElementById("blurid2");
-    a.style.filter = "blur(2px)";
+    a.style.opacity = "0.5";
 
     b = document.getElementById("textid2");
-    b.style.display = "block"
+    b.style.display = "block";
+    b.style.background = "rgba(0, 0, 0, 0.6)";
+    b.style.cursor = "pointer";
   }
 
   if (x.id == "id3") {
     a = document.getElementById("blurid3");
-    a.style.filter = "blur(2px)";
+    a.style.opacity = "0.5";
 
     b = document.getElementById("textid3");
-    b.style.display = "block"
+    b.style.display = "block";
+    b.style.background = "rgba(0, 0, 0, 0.6)";
+    b.style.cursor = "pointer";
   }
 
   if (x.id == "id4") {
     a = document.getElementById("blurid4");
-    a.style.filter = "blur(2px)";
+    a.style.opacity = "0.5";
 
     b = document.getElementById("textid4");
-    b.style.display = "block"
+    b.style.display = "block";
+    b.style.background = "rgba(0, 0, 0, 0.6)";
+    b.style.cursor = "pointer";
   }
 }
   
 function delFade(x) {
-    a.style.filter = "blur(0px)";
-    b.style.display = "none";
+  a.style.opacity = "1";
+  b.style.display = "none";
+}
+
+window.onload = function() {
+  loginReg = localStorage.getItem("login")
+  loginPass = localStorage.getItem("pass")
+
+  if (loginReg !== null) {
+    loginChange(loginReg);
+  }
 }

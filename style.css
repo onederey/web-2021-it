@@ -81,7 +81,12 @@ img {
     border-radius: 6px;
 }
 
+.genre:hover {
+    opacity: 1;
+}
+
 .genre {
+    opacity: 0.8;
     width: 280px;
     height: 208px;
     display: block;
@@ -119,7 +124,12 @@ img {
 .block {
 }
 
+.savevoid {
+    display: none;
+}
+
 .butt{
+    margin-right: 25px;
     width: 113px;
     height: 38px;
     float: right;
@@ -137,20 +147,8 @@ img {
     line-height: 19px;
 }
 
-.form-control {
-    border: 0;
-}
-
 .void {
     height: 10px;
-}
-
-.searchbut {
-    text-decoration: none;
-    top: 0%;
-    bottom: 24%;
-    font-size: 16px;
-    line-height: 19px;
 }
 
 .exitbut {
@@ -163,7 +161,6 @@ img {
 }
 
 .first_block {
-    background-image: url(images/c.png);
     width: 280px;
     height: 370px;
     background-repeat: no-repeat;
@@ -179,7 +176,14 @@ img {
     display: block;
 }
 
+.modal {
+    height: 394px;
+    width: 304px;
+}
+
 .info_img {
+    height: 370px;
+    border-radius: 8px;
     padding-top: 16px;
     padding-left: 16px;
     padding-bottom: 16px;
