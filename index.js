@@ -18,8 +18,6 @@ let hello = null;
 let loginReg = null;
 let passReg = null;
 
-let reg = false;
-
 function store() {
   inputLogin = document.getElementById("inputLogin");
   inputPass = document.getElementById("inputPass");
@@ -69,7 +67,7 @@ function exitLog() {
   enter.style.display = "block";
   exit.style.display = "none";
   exitButton.style.display = "none";
-
+  
   localStorage.clear();
 }
 
@@ -160,8 +158,8 @@ function delFade(x) {
 }
 
 window.onload = function() {
-  loginReg = localStorage.getItem("login")
-  loginPass = localStorage.getItem("pass")
+  loginReg = localStorage.getItem("login");
+  loginPass = localStorage.getItem("pass");
 
   if (loginReg !== null) {
     loginChange(loginReg);

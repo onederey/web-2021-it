@@ -124,6 +124,14 @@ img {
 .block {
 }
 
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+}
+
 .savevoid {
     display: none;
 }
@@ -196,6 +204,14 @@ img {
     bottom: 0;
     z-index: 10;
     display: none;
+}
+
+.sign {
+    padding-left: 20px;
+}
+
+.ultorow {
+    padding-left: 30px;
 }
 
 .round3 {
