@@ -18,6 +18,8 @@ let hello = null;
 let loginReg = null;
 let passReg = null;
 
+let inputSearch = null;
+
 function store() {
   inputLogin = document.getElementById("inputLogin");
   inputPass = document.getElementById("inputPass");
@@ -30,6 +32,9 @@ function store() {
 }
 
 function login() {
+  localStorage.setItem("login", "admin");
+  localStorage.setItem("pass", "admin");
+
   inputLogin = document.getElementById("inputLogin");
   inputPass = document.getElementById("inputPass");
 
@@ -38,6 +43,7 @@ function login() {
 
   loginReg = localStorage.getItem("login")
   passReg = localStorage.getItem("pass")
+  
 
   if (login == loginReg && pass == passReg) {
     loginChange(loginReg);
@@ -67,7 +73,7 @@ function exitLog() {
   enter.style.display = "block";
   exit.style.display = "none";
   exitButton.style.display = "none";
-  
+
   localStorage.clear();
 }
 
@@ -92,7 +98,7 @@ function setMovie() {
   tv = document.getElementById("tv");
 
   movie.style.display = "block";
-  tv.style.display="none";
+  tv.style.display = "none";
 }
 
 function setTv() {
@@ -106,7 +112,7 @@ function setTv() {
   tv = document.getElementById("tv");
 
   movie.style.display = "none";
-  tv.style.display="block";
+  tv.style.display = "block";
 }
 
 function setFade(x) {
@@ -151,13 +157,66 @@ function setFade(x) {
     b.style.cursor = "pointer";
   }
 }
-  
+
 function delFade(x) {
   a.style.opacity = "1";
   b.style.display = "none";
 }
 
-window.onload = function() {
+function searchFilm(e) {
+  let elems = document.getElementsByClassName("block");
+  let news = document.getElementsByClassName("ultorow");
+  let genres = document.getElementsByClassName("genre");
+  let tabs = document.getElementsByClassName("maintab");
+
+  let searching = e.target.value;
+  var arr = [];
+
+  for (var i = 0; i < elems.length; i++) {
+    arr.push(elems[i].children[1]);
+  }
+
+  if (searching != "") {
+    for (var i = 0; i < news.length; i++) {
+      news[i].style.display = "none";
+    }
+    for (var i = 0; i < genres.length; i++) {
+      genres[i].style.display = "none";
+    }
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].style.display = "none";
+    }
+
+    for (var i = 0; i < arr.length; i++) {
+      if (!arr[i].textContent.toUpperCase().includes(searching.toUpperCase())) {
+        elems[i].style.display = "none";
+      }
+      else {
+        elems[i].style.display = "block";
+      }
+    }
+  }
+  else {
+    for (var i = 0; i < news.length; i++) {
+      news[i].style.display = "block";
+    }
+    for (var i = 0; i < genres.length; i++) {
+      genres[i].style.display = "block";
+    }
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].style.display = "block";
+    }
+
+    for (var i = 0; i < arr.length; i++) {
+      elems[i].style.display = "block";
+    }
+  }
+}
+
+window.onload = function () {
+  inputSearch = document.getElementById("searchfilm");
+  inputSearch.addEventListener('input', searchFilm);
+
   loginReg = localStorage.getItem("login");
   loginPass = localStorage.getItem("pass");
 

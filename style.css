@@ -5,7 +5,8 @@ body{
 /*Шапка*/
 
 .tvscroll {
-    overflow-y:auto;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
 img {

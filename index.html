@@ -33,7 +33,7 @@
             </div>
             <div class="search container-fluid col-4">
                 <div class="input-group mb-3">
-                    <input type="text"
+                    <input type="text" id="searchfilm"
                         class="searchfocus form-control border-0 border-bottom border-dark rounded-0 shadow-none"
                         placeholder="Поиск..." aria-label="Поиск..." aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -80,10 +80,10 @@
                                                 <button type="submit" class="buttnone btn btn-danger"
                                                     onclick="login()">Войти</button>
                                             </div>
-                                            <div class="col text-center">
+                                            <!-- <div class="col text-center">
                                                 <button type="submit" class="buttnone btn btn-danger"
                                                     onclick="store()">Регистрация</button>
-                                            </div>
+                                            </div> -->
                                         </div>
 
                                     </form>
@@ -110,12 +110,12 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-sm text-end">
+            <div class="col-sm text-end maintab">
                 <button class="btn rounded-0 shadow-none" type="button" id="movieButton" onclick="setMovie()">
                     <h4>Фильмы</h4>
                 </button>
             </div>
-            <div class="col-sm text-start">
+            <div class="col-sm text-start maintab">
                 <button class="btn rounded-0 shadow-none" type="button" id="tvButton" onclick="setTv()">
                     <h4>Телепередачи</h4>
                 </button>
@@ -207,101 +207,106 @@
 
     </div>
 
-    <div class="container tvscroll" id="tv">
+    <div class="container" id="tv">
         <br>
-        <ul class="row">
-            <li class="container-fluid tvblock">
-                <div class="row">
-                    <div class="col-4 logo">
-                        <div class="imagelogo">
-                            <img src="images/1.png" alt="">
+        <div class="tvscroll">
+            <ul class="row">
+                <li class="container-fluid tvblock">
+                    <div class="row">
+                        <div class="col-4 logo">
+                            <div class="imagelogo">
+                                <img src="images/1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 progs">
+                            <h5 class="nameoftv">Первый канал</h5>
+                            <p class="nameofprog current">13:00 Новости с субтитрами</p>
+                            <p class="nameofprog">14:00 Давай поженимся</p>
+                            <p class="nameofprog">15:00 Другие новости</p>
                         </div>
                     </div>
-                    <div class="col-8 progs">
-                        <h5 class="nameoftv">Первый канал</h5>
-                        <p class="nameofprog current">13:00 Новости с субтитрами</p>
-                        <p class="nameofprog">14:00 Давай поженимся</p>
-                        <p class="nameofprog">15:00 Другие новости</p>
-                    </div>
-                </div>
-            </li>
-            <li class="tvvoid"></li>
-            <li class="container-fluid tvblock">
-                <div class="row">
-                    <div class="col-4 logo">
-                        <div class="imagelogo">
-                            <img src="images/2x2.png" alt="">
+                </li>
+                <li class="tvvoid"></li>
+                <li class="container-fluid tvblock">
+                    <div class="row">
+                        <div class="col-4 logo">
+                            <div class="imagelogo">
+                                <img src="images/2x2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 progs">
+                            <h5 class="nameoftv">2х2</h5>
+                            <p class="nameofprog current">13:00 МУЛЬТ ТВ. Сезон 4, 7 серия</p>
+                            <p class="nameofprog">14:00 ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия</p>
+                            <p class="nameofprog">15:00 БУРДАШЕВ. Сезон 1, 20 серия</p>
                         </div>
                     </div>
-                    <div class="col-8 progs">
-                        <h5 class="nameoftv">2х2</h5>
-                        <p class="nameofprog current">13:00 МУЛЬТ ТВ. Сезон 4, 7 серия</p>
-                        <p class="nameofprog">14:00 ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия</p>
-                        <p class="nameofprog">15:00 БУРДАШЕВ. Сезон 1, 20 серия</p>
-                    </div>
-                </div>
-            </li>
-            <li class="tvvoid"></li>
-            <li class="container-fluid tvblock">
-                <div class="row">
-                    <div class="col-4 logo">
-                        <div class="imagelogo">
-                            <img src="images/rbc.png" alt="">
+                </li>
+                <li class="tvvoid"></li>
+                <li class="container-fluid tvblock">
+                    <div class="row">
+                        <div class="col-4 logo">
+                            <div class="imagelogo">
+                                <img src="images/rbc.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 progs">
+                            <h5 class="nameoftv">РБК</h5>
+                            <p class="nameofprog current">13:00 ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС
+                            </p>
+                            <p class="nameofprog">14:00 ДЕНЬ. Главные темы</p>
+                            <p class="nameofprog">15:00 Главные новости</p>
                         </div>
                     </div>
-                    <div class="col-8 progs">
-                        <h5 class="nameoftv">РБК</h5>
-                        <p class="nameofprog current">13:00 ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС</p>
-                        <p class="nameofprog">14:00 ДЕНЬ. Главные темы</p>
-                        <p class="nameofprog">15:00 Главные новости</p>
-                    </div>
-                </div>
-            </li>
-            <li class="tvvoid"></li>
-            <li class="container-fluid tvblock">
-                <div class="row">
-                    <div class="col-4 logo">
-                        <div class="imagelogo">
-                            <img src="images/amed.png" alt="">
+                </li>
+                <li class="tvvoid"></li>
+                <li class="container-fluid tvblock">
+                    <div class="row">
+                        <div class="col-4 logo">
+                            <div class="imagelogo">
+                                <img src="images/amed.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 progs">
+                            <h5 class="nameoftv">AMEDIA PREMIUM</h5>
+                            <p class="nameofprog current">13:00 Клиент всегда мёртв</p>
+                            <p class="nameofprog">14:00 Голодные игры: Сойка-пересмешница. Часть I</p>
+                            <p class="nameofprog">15:00 Секс в большом городе</p>
                         </div>
                     </div>
-                    <div class="col-8 progs">
-                        <h5 class="nameoftv">AMEDIA PREMIUM</h5>
-                        <p class="nameofprog current">13:00 Клиент всегда мёртв</p>
-                        <p class="nameofprog">14:00 Голодные игры: Сойка-пересмешница. Часть I</p>
-                        <p class="nameofprog">15:00 Секс в большом городе</p>
-                    </div>
-                </div>
+                </li>
+                <li class="tvvoid"></li>
+            </ul>
+        </div>
+        <li class="tvvoid"></li>
     </div>
-    <li class="tvvoid">
-        </div>
-        </ul>
-        </div>
+    </ul>
+    </div>
 
-        <footer>
-            <div class="foot container-fluid">
-                <div class="container">
-                    <div class="row form_info">
-                        <div class="img_foot col-1">
-                            <a href=""><img class="foot_imgs" src="images/Vector (1).png" alt=""></a>
-                        </div>
-                        <div class="col-11">
-                            <p class="address">
-                                426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)
+    <footer>
+        <div class="foot container-fluid">
+            <div class="container">
+                <div class="row form_info">
+                    <div class="img_foot col-1">
+                        <a href=""><img class="foot_imgs" src="images/Vector (1).png" alt=""></a>
+                    </div>
+                    <div class="col-11">
+                        <p class="address">
+                            426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)
+                        </p>
+                        <p class="phone">
+                            +7 (3412) 93-88-61, 43-29-29
+                        </p>
+                        <a class="link_ft" href="htc-cs.ru">
+                            <p class="link">
+                                htc-cs.ru
                             </p>
-                            <p class="phone">
-                                +7 (3412) 93-88-61, 43-29-29
-                            </p>
-                            <a class="link_ft" href="htc-cs.ru">
-                                <p class="link">
-                                    htc-cs.ru
-                                </p>
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
 </body>
 
