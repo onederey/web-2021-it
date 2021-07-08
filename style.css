@@ -5,9 +5,8 @@ body{
 /*Шапка*/
 
 .tvscroll {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
+    height: 730px !important;
+} 
 
 img {
     border-radius: 3%;

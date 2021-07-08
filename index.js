@@ -26,15 +26,18 @@ function store() {
 
   localStorage.setItem("login", inputLogin.value);
   localStorage.setItem("pass", inputPass.value);
-
-  loginReg = localStorage.getItem("login")
-  passReg = localStorage.getItem("pass")
+  localStorage.setItem("isLogged", "0");
 }
 
 function login() {
-  localStorage.setItem("login", "admin");
-  localStorage.setItem("pass", "admin");
+  if(document.getElementById("check").checked) {
+    localStorage.setItem("check", "1");
+  }
+  else {
+    localStorage.setItem("check", "0");
+  }
 
+  localStorage.setItem("isLogged", "1");
   inputLogin = document.getElementById("inputLogin");
   inputPass = document.getElementById("inputPass");
 
@@ -43,7 +46,7 @@ function login() {
 
   loginReg = localStorage.getItem("login")
   passReg = localStorage.getItem("pass")
-  
+
 
   if (login == loginReg && pass == passReg) {
     loginChange(loginReg);
@@ -54,15 +57,22 @@ function login() {
 }
 
 function loginChange(userName) {
-  enter = document.getElementById("notLogged");
-  exit = document.getElementById("onlyLogged");
-  exitButton = document.getElementById("onlyLogged2");
+  let isLogged = localStorage.getItem("isLogged");
 
-  hello = document.getElementById("helloWorld").textContent += (userName + ",");
+  if (isLogged === "0") {
+    console.log("You dont have to see it!")
+  }
+  else {
+    enter = document.getElementById("notLogged");
+    exit = document.getElementById("onlyLogged");
+    exitButton = document.getElementById("onlyLogged2");
 
-  enter.style.display = "none";
-  exit.style.display = "block";
-  exitButton.style.display = "block";
+    hello = document.getElementById("helloWorld").textContent += (userName + ",");
+
+    enter.style.display = "none";
+    exit.style.display = "block";
+    exitButton.style.display = "block";
+  }
 }
 
 function exitLog() {
@@ -165,9 +175,6 @@ function delFade(x) {
 
 function searchFilm(e) {
   let elems = document.getElementsByClassName("block");
-  let news = document.getElementsByClassName("ultorow");
-  let genres = document.getElementsByClassName("genre");
-  let tabs = document.getElementsByClassName("maintab");
 
   let searching = e.target.value;
   var arr = [];
@@ -177,16 +184,6 @@ function searchFilm(e) {
   }
 
   if (searching != "") {
-    for (var i = 0; i < news.length; i++) {
-      news[i].style.display = "none";
-    }
-    for (var i = 0; i < genres.length; i++) {
-      genres[i].style.display = "none";
-    }
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].style.display = "none";
-    }
-
     for (var i = 0; i < arr.length; i++) {
       if (!arr[i].textContent.toUpperCase().includes(searching.toUpperCase())) {
         elems[i].style.display = "none";
@@ -197,16 +194,6 @@ function searchFilm(e) {
     }
   }
   else {
-    for (var i = 0; i < news.length; i++) {
-      news[i].style.display = "block";
-    }
-    for (var i = 0; i < genres.length; i++) {
-      genres[i].style.display = "block";
-    }
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].style.display = "block";
-    }
-
     for (var i = 0; i < arr.length; i++) {
       elems[i].style.display = "block";
     }
@@ -222,5 +209,9 @@ window.onload = function () {
 
   if (loginReg !== null) {
     loginChange(loginReg);
+  }
+
+  if(localStorage.getItem("check") === "0") {
+    localStorage.setItem("isLogged", 0);
   }
 }
